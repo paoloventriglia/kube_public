@@ -11,7 +11,7 @@ variable "region" {
 }
 
 variable "gke_depends_on" {
-  default = ""
+  default     = ""
   description = ""
 }
 
@@ -21,7 +21,7 @@ variable "initial_node_count" {
 }
 
 variable "name" {
-  default = ""
+  default     = ""
   description = ""
 }
 

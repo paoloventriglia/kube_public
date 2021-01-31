@@ -1,24 +1,31 @@
-provider "google" {
-  region = var.region
-}
+terraform {
+  backend "remote" {
+    organization = "your org"
+    hostname     = "app.terraform.io"
+    token        = "your token"
 
-provider "google-beta" {
-  region = var.region
+    workspaces {
+      name = "your workspace"
+    }
+  }
+  required_version = ">= 0.13"
+
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+    }
+    google-beta = {
+      source = "hashicorp/google-beta"
+    }
+    template = {
+      source = "hashicorp/template"
+    }
+    cloudflare = {
+      source = "cloudflare/cloudflare"
+    }
+  }
 }
 
 provider "cloudflare" {
-  api_token = "*****"
-}
-
-terraform {
-  backend "remote" {
-    organization = "corebox"
-    hostname     = "app.terraform.io"
-    token        = "*****"
-
-    workspaces {
-      name = "cloudymation-app"
-    }
-  }
-  required_version = ">= 0.12"
+  api_token = "your token"
 }

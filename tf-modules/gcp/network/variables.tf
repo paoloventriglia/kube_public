@@ -4,12 +4,12 @@ variable "project_id" {
 
 variable "name" {
   description = ""
-  default = ""
+  default     = ""
 }
 
 variable "region" {
   description = ""
-  default = "europe-west2"
+  default     = "europe-west2"
 }
 
 variable "subnets" {
@@ -24,6 +24,6 @@ variable "secondary_ranges" {
 }
 
 variable "source_ranges" {
-  default = [""]
+  default     = [""]
   description = ""
 }

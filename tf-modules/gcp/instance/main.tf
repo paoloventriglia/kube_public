@@ -23,7 +23,7 @@ resource "google_compute_instance" "main" {
 
   metadata = {
     startup-script = var.startup_script
-    ssh-keys = var.ssh_keys
+    ssh-keys       = var.ssh_keys
   }
 
   service_account {

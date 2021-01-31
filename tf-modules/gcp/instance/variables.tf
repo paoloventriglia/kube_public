@@ -1,59 +1,59 @@
 variable "project_id" {
   description = ""
-  default = ""
+  default     = ""
 }
 
 variable "name" {
   description = ""
-  default = ""
+  default     = ""
 }
 
 variable "application" {
   description = ""
-  default = ""
+  default     = ""
 }
 
 variable "vm_depends_on" {
-  default = ""
+  default     = ""
   description = ""
 }
 
 variable "machine_type" {
   description = ""
-  default = "e2-small"
+  default     = "e2-standard-2"
 }
 
 variable "zone" {
   description = ""
-  default = "europe-west2-a"
+  default     = "europe-west2-a"
 }
 
 variable "region" {
-  default = ""
+  default     = ""
   description = ""
 }
 
 variable "image" {
   description = ""
-  default = ""
+  default     = ""
 }
 
 variable "subnetwork" {
   description = ""
-  default = ""
+  default     = ""
 }
 
 variable "startup_script" {
   description = ""
-  default = ""
+  default     = ""
 }
 
 variable "ssh_keys" {
   description = ""
-  default = ""
+  default     = ""
 }
 
 variable "tags" {
   description = ""
-  default = ""
+  default     = ""
 }

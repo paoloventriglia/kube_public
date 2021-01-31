@@ -1,7 +1,7 @@
-output "vm_ip" {
-  value = module.jumpbox.vm_ip
+output "network" {
+  value = module.network.network_self_link
 }
 
-output "vm_ext_ip" {
-  value = module.jumpbox.vm_ext_ip
+output "subnets" {
+  value = module.network.subnets
 }

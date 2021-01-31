@@ -1,5 +1,5 @@
 module "network" {
-  source           = "../../../tf-modules/gcp/network"
+  source           = "../../../kube_public/tf-modules/gcp/network"
   subnets          = var.subnets
   name             = var.name
   project_id       = var.project_id

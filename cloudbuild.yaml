@@ -1,0 +1,8 @@
+steps:
+- name: 'hashicorp/terraform:0.14.0'
+  entrypoint: 'sh'
+  args: ['./ci/plan.sh']
+
+- name: 'hashicorp/terraform:0.14.0'
+  entrypoint: 'sh'
+  args: ['./ci/apply.sh']

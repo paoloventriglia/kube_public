@@ -1,15 +1,20 @@
 #!/bin/sh
 
-# Install Kubectl
-apt-get update && sudo apt-get install -y apt-transport-https gnupg2
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
-apt-get update
-apt-get install -y kubectl
+# Install packages
+sudo apt-get install -y software-properties-common git kubectl
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt update
+sudo apt install -y terraform=0.14.0
 
-# Install Helm
-curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
-chmod 700 get_helm.sh
-./get_helm.sh
-helm repo add bitnami https://charts.bitnami.com/bitnami
+# Clone Repo
+git_token=`gcloud secrets versions  access 1 --secret=git_token`
+git clone "your repo"
+
+# Deploy App
+export HOME=/root
+cd "your app repo"/deployment/apps
+gcloud container clusters get-credentials "your cluster" --zone europe-west2-a --project "your project"
+terraform init
+terraform apply --auto-approve
 

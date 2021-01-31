@@ -95,7 +95,7 @@ resource "google_compute_router_nat" "nat" {
   nat_ip_allocate_option             = "AUTO_ONLY"
   source_subnetwork_ip_ranges_to_nat = "LIST_OF_SUBNETWORKS"
   subnetwork {
-    name = "projects/${var.project_id}/regions/${var.region}/subnetworks/${var.name}-sub-${var.region}"
+    name                    = "projects/${var.project_id}/regions/${var.region}/subnetworks/${var.name}-sub-${var.region}"
     source_ip_ranges_to_nat = ["PRIMARY_IP_RANGE"]
   }
 
